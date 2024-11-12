@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simo's Blog</title>
+</head>
+<%- include("partials/header.ejs") %>
+<body>
+    <div class="container">
+    <h1><%= title %></h1>
+    <p><%= content %></p>
+    <div class="buttons">
+    <a href="/edit/<%= title %>">
+        <button class="btn btn-dark" name="button">Edit Post</button>
+    </a>
+    <div class="divider"></div>
+    <form action="/posts/<%= title %>?_method=DELETE" method="POST">
+        <button class="btn btn-dark" name="button">Delete Post</button>
+    </form>
+    <div class="divider"></div>
+    <a href="/" class="btn btn-dark">Back to Home</a>
+    </form>
+    </div>
+    </div>
+</body>
+<%- include("partials/footer.ejs") %>
+</html>

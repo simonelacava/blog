@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simo's Blog</title>
+</head>
+<%- include("partials/header.ejs") %>
+<body>
+    <div class="title">
+    <h1>Welcome to My Blog</h1>
+    <p>Welcome to my corner of the internet, where stories, thoughts, and inspiration come to life.</p>
+    <div class="blogList">
+    <% console.log(posts) %>
+
+    <% posts.forEach(function(post) {%>
+    <h2><%= post.title %></h2>
+    <p>
+    <%= post.content.substring(0,100) + "..."%>
+    <a href ="/posts/<%= post.title %>">Read More</a>
+    </p>
+    <% }); %>
+    </div>
+</body>
+<%- include("partials/footer.ejs") %>
+</html>
